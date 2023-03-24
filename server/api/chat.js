@@ -15,7 +15,6 @@ export default defineEventHandler(async (event) => {
 
 	try {
 
-		console.log(prompt);
 		const response = await openai.createCompletion({
 			model: "text-davinci-003",
 			prompt: prompt,
@@ -27,7 +26,6 @@ export default defineEventHandler(async (event) => {
 		})
 
 		chat_reply = response.data.choices[0].text
-		// console.log(response);
 
 	} catch (error) {
 
