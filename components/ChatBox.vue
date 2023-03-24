@@ -77,7 +77,10 @@ async function sendMessage() {
 	const isCrypto = chatInput?.value?.includes("crypto");
 	console.log(isCrypto);
 	if (isCrypto) {
-		getCryptoData().then(response => askGPT());
+		getCryptoData().then(response => {
+			askGPT();
+			chatInputMod.value = '';
+		});
 	} else {
 		askGPT();
 	}
