@@ -4,6 +4,9 @@
 
 This is a basic chatGPT implementation using nuxt3 and the server api as well as Tailwind CSS. It is a good starting point to build more interesting things.
 
+- updated to use GPT 3.5
+- demo connect GPT to another API. Type `crypto` in the chat box for a 7d BTC price prediction
+
 ## Setup
 
 Make sure to install the dependencies:
