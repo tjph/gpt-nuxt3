@@ -20,6 +20,7 @@ const res = ref('');
 const messages: any = ref([]);
 const pricesList = ref('');
 const chatInputMod = ref('');
+const config = useRuntimeConfig();
 
 // Make GPT interact with data from another API
 async function getCryptoData() {
@@ -27,7 +28,7 @@ async function getCryptoData() {
 		method: "GET",
 		params: {"referenceCurrencyUuid": "yhjMzLPhuIDl", "timePeriod": "7d"},
 		headers: {
-			"X-RapidAPI-Key": "a617d6467dmshac84323ce581a72p11caa9jsn1adf8bbcbd47",
+			"X-RapidAPI-Key": config.public.XRAPID_KEY,
 			"X-RapidAPI-Host": "coinranking1.p.rapidapi.com"
 		}
 	})
