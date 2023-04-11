@@ -34,6 +34,9 @@
 					<div :class="[message.from === 'user' ? 'bg-gray-100' : 'bg-pink-200']" class="rounded-md p-3 max-w-[90%]">{{ message.data }}</div>
 				</div>
     		</template>
+			<div v-if="isLoading" class="justify-start w-full flex">
+				<div class="rounded-md p-3 max-w-[90%] bg-pink-200">Working on your Answer...</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -41,7 +44,8 @@
 <script setup lang="ts">
 const chatInput = ref('');
 const res = ref('');
-const isChecked = ref(true)
+const isLoading = ref(false);
+const isChecked = ref(true);
 const lang = ref('fr-FR');
 const messages: any = ref([]);
 const pricesList = ref('');
@@ -159,6 +163,7 @@ async function askGPT() {
 
 	const question = chatInputMod.value !== '' ? chatInputMod.value : chatInput.value;
 	const messageLength = parseInt(question.length as any);
+	isLoading.value = true;
 
 	if (messageLength < 2) {
 		return false;
@@ -177,6 +182,7 @@ async function askGPT() {
 		}
     })
     const result: any = await response;
+	isLoading.value = false;
 
 	speak(result.text)
 
