@@ -6,7 +6,7 @@ This is a basic chatGPT implementation using nuxt3 and the server api as well as
 
 - updated to use GPT 3.5
 - demo connect GPT to another API. Type `crypto` in the chat box for a 7d BTC price prediction
-- Talk to GPT: added voice recognition and speech synthesis click on the mic and your question and use `send, delete, envoyer, effacer` to send or delete the message.
+- Talk to GPT: added voice recognition and speech synthesis click on the mic ask your question and use the following keywords at the end `send, delete, envoyer, effacer` to send or delete the message.
 
 ## Setup
 
